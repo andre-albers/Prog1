@@ -21,6 +21,7 @@ Es hat die Signatur "void ausgabe(unsigned)".
 Hinweise: - Die Fehlerbehandlung einer falschen Eingabe erfolgt im Hauptprogramm.
 		  - Es dürfen keine globalen Variablen verwendet werden.
 		  - Es ist sich unbedingt an die vorgebenen Signaturen zu halten.*/
+#define _CRT_SECURE_NO_WARNINGS 1
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -51,7 +52,7 @@ unsigned fakul_berechnung(unsigned int n) {
 	}
 	else {
 		printf("Zahl war nicht zwischen 2-10!\n");
-		printf(eingabe());
+		eingabe();
 	}
 }
 
