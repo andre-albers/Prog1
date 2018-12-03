@@ -12,7 +12,7 @@ Informieren Sie sich, was die Werte 1! und 2! ergeben. Benutzen Sie die Unterpro
 #include <stdio.h>
 
 void ausgabe(float zahl);
-unsigned fakul_berechnung(unsigned int n);
+float fakul_berechnung(unsigned int n);
 unsigned eingabe(void);
 
 void main() {
@@ -38,7 +38,7 @@ unsigned eingabe(void) {
 	return eingabe;
 }
 
-unsigned fakul_berechnung(unsigned int n) {
+float fakul_berechnung(unsigned int n) {
 	float ergebnis = 0, fakult = 1;
 	for (int i = 1; i <= n; i++) {
 		fakult = fakult * i;
