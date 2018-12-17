@@ -1,0 +1,3 @@
+﻿  zeichenketten.c
+c:\users\andre\documents\github\prog1\tutorium\zeichenketten.c(99): warning C4013: "system" undefiniert; Annahme: extern mit Rückgabetyp int
+  Zeichenketten.vcxproj -> C:\Users\andre\Documents\GitHub\Prog1\Tutorium\Zeichenketten\Debug\Zeichenketten.exe
