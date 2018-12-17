@@ -15,24 +15,31 @@ Hinweis:
 
 int eingabezahl();
 int wahlop();
-float quad_berechnung(float eingezahl);
+int quad_berechnung(int eingezahl);
 float rezi_berechnung(float eingezahl);
-void ausgabe(float ergebnis);
+void ausgabe(float ergebnis, int wahl_op);
 
 void main() {
-	int eingezahl, wahl_op;
+	int eingezahl, wahl_op, erg_quad;
+	float erg_rez = 1;
 	do {
 		printf("Bitte eine Zahl eingeben:\n");
 		eingezahl = eingabezahl();
-		printf("\nBitte nun Operation waehlen:\n 1 - Quadratwert berechnen | 2 - Reziprokwert berechnen || 0 zum Beenden");
+		printf("Bitte nun Operation waehlen:\n 1-Quadratwert berechnen | 2-Reziprokwert berechnen || 0-Beenden\n");
 		wahl_op = wahlop();
-		if (wahl_op == 1) quad_berechnung(eingezahl);
-		else if (wahl_op == 2) rezi_berechnung(eingezahl);
+		if (wahl_op == 1) {
+			erg_quad = quad_berechnung(eingezahl);
+			ausgabe(erg_quad, wahl_op);
+		}
+		else if (wahl_op == 2) {
+			erg_rez = rezi_berechnung(eingezahl);
+			ausgabe(erg_rez, wahl_op);
+		}
+		else if (wahl_op == 0) return 0;
 		else ("Eingebene Zahl war nicht 1 oder 2!");
+
 	} while (eingezahl != 0);
-
 	return 0;
-
 }
 
 int eingabezahl() {
@@ -47,16 +54,20 @@ int wahlop() {
 	return wahl;
 }
 
-float quad_berechnung(float eingezahl) {
-
+int quad_berechnung(int eingezahl) {
+	int erg_quad;
+	erg_quad = eingezahl * eingezahl;
+	return erg_quad;
 }
 
 float rezi_berechnung(float eingezahl) {
-
+	float erg_rezi;
+	erg_rezi = 1.0 / eingezahl;
+	return erg_rezi;
 }
 
-void ausgabe(float ergebnis) {
-
+void ausgabe(float ergebnis, int wahl_op) {
+	if (wahl_op == 1) printf("\nDer Quadratwert ist: %6.3f\n**************************\n", ergebnis);
+	if (wahl_op == 2) printf("\nDer Reziprokwert ist: %6.8f\n**************************\n", ergebnis);
 }
-
 
